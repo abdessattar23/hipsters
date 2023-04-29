@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-database.js"></script>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    
+    
+    <script>
+      // Initialize Firebase
+var firebaseConfig = {
+  apiKey: "AIzaSyBNy7UoUGLVJWcIs2zbogWzO6qItr3sFBo",
+  authDomain: "hipsters-beta.firebaseapp.com",
+  projectId: "hipsters-beta",
+  storageBucket: "hipsters-beta.appspot.com",
+  messagingSenderId: "802281437693",
+  appId: "1:802281437693:web:1a78649870581d4aca8194",
+  measurementId: "G-KPE4VCE0F0"
+};
+firebase.initializeApp(firebaseConfig);
+      var childFolderRef = myFolderRef.child('users');
+childFolderRef.set({});
+    </script>
+  </body>
+</html>
