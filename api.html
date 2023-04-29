@@ -1,34 +1,40 @@
 <html>
   <head>
-   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
 
-<!-- Add additional Firebase products that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-realtime-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-storage.js"></script>
   </head>
   <body>
     <h1>Hello</h1>
-    <script>
-      // Initialize Firebase
-      var firebaseConfig = {
-  apiKey: "AIzaSyBNy7UoUGLVJWcIs2zbogWzO6qItr3sFBo",
-  authDomain: "hipsters-beta.firebaseapp.com",
-  projectId: "hipsters-beta",
-  storageBucket: "hipsters-beta.appspot.com",
-  messagingSenderId: "802281437693",
-  appId: "1:802281437693:web:1a78649870581d4aca8194"
-      };
-      firebase.initializeApp(firebaseConfig);
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
+  import { database } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-database.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-      // Define the reference to the "myFolder" node
-      var myFolderRef = firebase.database().ref('myFolder');
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBNy7UoUGLVJWcIs2zbogWzO6qItr3sFBo",
+    authDomain: "hipsters-beta.firebaseapp.com",
+    databaseURL: "https://hipsters-beta-default-rtdb.firebaseio.com",
+    projectId: "hipsters-beta",
+    storageBucket: "hipsters-beta.appspot.com",
+    messagingSenderId: "802281437693",
+    appId: "1:802281437693:web:9d105e846ff29d32ca8194",
+    measurementId: "G-LSP1J7RQDT"
+  };
 
-      // Create a child node called "users" under "myFolder"
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+       var myFolderRef = firebase.database().ref('myFolder');
       var childFolderRef = myFolderRef.child('users');
       childFolderRef.set({});
+</script>
+   
+     
+     
     </script>
   </body>
 </html>
