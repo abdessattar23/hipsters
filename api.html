@@ -29,7 +29,7 @@ firebase.initializeApp(firebaseConfig);
        var myFolderRef = firebase.database().ref('users');
       var username = prompt('what is your name ?','');
       var childFolderRef = myFolderRef.child(username);
-      myFolderRef.set({
+      childFolderRef.set({
       username:username,
        id: generateUserID(),
         password:'passcode'
