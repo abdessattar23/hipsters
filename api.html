@@ -16,14 +16,23 @@
     appId: "1:802281437693:web:9d105e846ff29d32ca8194",
     measurementId: "G-LSP1J7RQDT"
   };
-
+function generateUserID() {
+  const timestamp = Date.now().toString(); // get the current timestamp as a string
+  const randomNumber = Math.floor(Math.random() * 900000) + 100000; // generate a random number between 100000 and 999999
+  const paddedRandomNumber = randomNumber.toString().padStart(6, '0'); // pad the random number with zeros to ensure it has 6 digits
+  const truncatedTimestamp = timestamp.slice(-13); // truncate the timestamp if it's longer than 13 characters
+  const id = truncatedTimestamp + paddedRandomNumber; // concatenate the truncated timestamp and padded random number to create the user ID
+  return id.slice(0, 19); // limit the length of the ID to 19 characters
+}
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-       var myFolderRef = firebase.database().ref('myFolder');
-      var childFolderRef = myFolderRef.child('users');
-      childFolderRef.set({
-      name:"test",
-        age:"16"
+       var myFolderRef = firebase.database().ref('users');
+      var username = prompt('what is your name ?','');
+      var childFolderRef = myFolderRef.child(username);
+      myFolderRef.set({
+      username:username,
+       id: generateUserID(),
+        password:'passcode'
       });
 </script>
   </body>
