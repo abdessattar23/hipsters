@@ -18,7 +18,7 @@
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
        var myFolderRef = firebase.database().ref('myFolder');
       var childFolderRef = myFolderRef.child('users');
       childFolderRef.set({});
