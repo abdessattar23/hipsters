@@ -20,13 +20,15 @@ firebase.initializeApp({
       const fullname = 'Abdessattar Elyagoubi';
       const age = 16;
       const password = "Simou2007";
-  try {
+  async function newUser(username, fullname, age, password){
+      try {
     // Create the main folder with the given name
     await firebase.database().ref(username).set('');
 
     // Create the 'info' subfolder and upload the data
     const infoRef = firebase.database().ref(`${username}/info`);
     await infoRef.set({ username, fullname, age, password });
+      };
     </script>
     <!--<script>
   const firebaseConfig = {
